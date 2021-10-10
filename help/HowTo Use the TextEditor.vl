@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" Id="BnUAmMKtQPvQB9qPuNUysv" LanguageVersion="2021.4.0.483" Version="0.128">
+  <NugetDependency Id="JAa5LjVTQSUMnTOxAI32DG" Location="VL.CoreLib" Version="2021.4.0-0483-g5376d8cf6e" />
+  <Patch Id="GsIOe7aU1y5M0hpbgkkbbk">
+    <Canvas Id="BhNHIwDAx5DLDpbuKtCUxQ" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="K1Ay6zRAVsgLx1Qjpb3B8N">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <FullNameCategoryReference ID="Primitive" />
+      </p:NodeReference>
+      <Patch Id="FVR8DDrfmKvNeLQjjLAzoN">
+        <Canvas Id="UwwzwtIxlw3NW5sMWuEHMM" CanvasType="Group">
+          <Node Bounds="382,229,63,19" Id="HOuu9YqircCOBXe0ggouWZ">
+            <p:NodeReference LastCategoryFullName="TextEditor" LastSymbolSource="VL.TextEditor.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="TextEditor" />
+            </p:NodeReference>
+            <Pin Id="CEOfjRJn8L2OJPwSqYpA2J" Name="Text" Kind="InputPin" />
+            <Pin Id="BVE3Qa2vNxGMKdqKUYepGY" Name="Syntax Highlight" Kind="InputPin" />
+            <Pin Id="Kd5vkgxVaIKP9qIF9AFzh2" Name="Selected Text" Kind="OutputPin" />
+            <Pin Id="N1s9wT54GZzOVsjrw930Rz" Name="Text" Kind="OutputPin" />
+          </Node>
+          <Pad Id="EM9h6CwJF0eNRqSo5HeT8R" Comment="Text" Bounds="384,197,35,15" ShowValueBox="true" isIOBox="true" Value="">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+        </Canvas>
+        <Patch Id="BRHhT6thIijP1Hr6K8T6S0" Name="Create" />
+        <Patch Id="H8EyaHiuXnwO1t63FOzPix" Name="Update" />
+        <ProcessDefinition Id="Jy0ebNiQMutL2BqpzpzjCA">
+          <Fragment Id="GQrbofFKiZRPno2n9w3QV0" Patch="BRHhT6thIijP1Hr6K8T6S0" Enabled="true" />
+          <Fragment Id="RvpiAYgrqIEO2JAulIOTeh" Patch="H8EyaHiuXnwO1t63FOzPix" Enabled="true" />
+        </ProcessDefinition>
+        <Link Id="LS7shKr6SZWL0A02HTfYHc" Ids="EM9h6CwJF0eNRqSo5HeT8R,CEOfjRJn8L2OJPwSqYpA2J" />
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="AC5EozBUPQaMmuMAzYqxon" Location="VL.CoreLib" Version="2021.4.0-0483-g5376d8cf6e" />
+  <NugetDependency Id="MKb5Z7ygOGhN2rD2raE0sx" Location="VL.TextEditor" Version="0.0.0.0" />
+</Document>
