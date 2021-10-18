@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="JhLJJZMM37jPJtkUf8J1RD" LanguageVersion="2021.4.0.506" Version="0.128">
-  <NugetDependency Id="QBLZF5CrjR6LACOcB09JX4" Location="VL.CoreLib" Version="2021.4.0-0506-g16b8b9f878" />
+<Document xmlns:p="property" Id="JhLJJZMM37jPJtkUf8J1RD" LanguageVersion="2021.4.0.526" Version="0.128">
+  <NugetDependency Id="QBLZF5CrjR6LACOcB09JX4" Location="VL.CoreLib" Version="2021.4.0-0526-gd606d93626" />
   <Patch Id="OawnvkH8JsyOKzMDvdG3KL">
     <Canvas Id="A6V8Mv1aGCYMixzFgoMkUd" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
     <!--
@@ -14,15 +14,224 @@
         <FullNameCategoryReference ID="Primitive" />
       </p:NodeReference>
       <Patch Id="EoUK6GHo5m8OF7t2Eq9aoe">
-        <Canvas Id="Aj2EbhkGBCYOAdt8xzvfrW" CanvasType="Group" />
+        <Canvas Id="Aj2EbhkGBCYOAdt8xzvfrW" CanvasType="Group">
+          <Node Bounds="110,310,85,19" Id="TvORx0eOPWCPoraS9eHVJy">
+            <p:NodeReference LastCategoryFullName="IO.HTTP" LastSymbolSource="VL.HTTP.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="HTTPGet" />
+            </p:NodeReference>
+            <Pin Id="GUjpwRKpJvCLcMTCfCdcOL" Name="URL" Kind="InputPin" />
+            <Pin Id="GgqQkbhOBpXMsCsxR6gx3T" Name="Headers" Kind="InputPin" />
+            <Pin Id="TYvdN6mvpylLyCaKM9wX6Q" Name="Username" Kind="InputPin" />
+            <Pin Id="J5L34jZXwjdOizeXIqoBuW" Name="Password" Kind="InputPin" />
+            <Pin Id="OLQTqmRbwMlP8phFdpVvBf" Name="Refresh" Kind="InputPin" />
+            <Pin Id="LC7VETVfytpPnGPtIKORB9" Name="Result" Kind="OutputPin" />
+            <Pin Id="VwRnQbwTBDALgqzs7YHFyN" Name="In Progress" Kind="OutputPin" />
+          </Node>
+          <Pad Id="Tbbn9uWpJdFL86vpLkHzJ0" Comment="URL" Bounds="112,227,82,15" ShowValueBox="true" isIOBox="true" Value="https://randomuser.me/api/">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Node Bounds="110,352,141,180" Id="Tj8XFvHt1fDPHTs89Uf5ZG">
+            <p:NodeReference LastCategoryFullName="Reactive" LastSymbolSource="VL.Reactive.vl">
+              <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="ForEach" />
+              <CategoryReference Kind="Category" Name="Reactive" NeedsToBeDirectParent="true" />
+            </p:NodeReference>
+            <Pin Id="Nc4Fst8SoOsNYjaooE36za" Name="Messages" Kind="InputPin" />
+            <Pin Id="QzDioFXa6WRNs2lIJNKT0b" Name="Reset" Kind="InputPin" />
+            <Pin Id="GaTZEsmDY0FLm58fo1W3NX" Name="Result" Kind="OutputPin" />
+            <Patch Id="EOmOVR4P8dlLbXnOgW4f8R" ManuallySortedPins="true">
+              <Patch Id="SXSbUhyFjvDPOrldrokiT0" Name="Create" ManuallySortedPins="true" />
+              <Patch Id="VGcmEaxGQN7PB0kDfg1LvO" Name="Update" ManuallySortedPins="true">
+                <Pin Id="BlM2n2JpR0cLECi5U5qPJx" Name="Input 1" Kind="InputPin" />
+                <Pin Id="ScghjuQVjkkMcWk8tD4f3k" Name="Output" Kind="OutputPin" />
+              </Patch>
+              <ControlPoint Id="R5x0V2kwUC7L4mDcNZbgWc" Bounds="114,360" />
+              <ControlPoint Id="JSPRjoqL1L7O1UpDYAWCrw" Bounds="178,525" />
+              <Node Bounds="124,385,57,26" Id="R4nlI7gesiuLqipwyB4ZQ6">
+                <p:NodeReference LastCategoryFullName="IO.HTTP.HTTPGet.HTTPResult" LastSymbolSource="VL.HTTP.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <CategoryReference Kind="RecordType" Name="HTTPResult" />
+                  <Choice Kind="OperationCallFlag" Name="Split" />
+                </p:NodeReference>
+                <Pin Id="SGPSSpgDI5XM6srs3SkYbj" Name="Input" Kind="StateInputPin" />
+                <Pin Id="Ud3GVk1qn1PM6YfzqbKcUD" Name="Status" Kind="OutputPin" />
+                <Pin Id="Gbw3EhgmjrmM6tJbdr4Opc" Name="Header" Kind="OutputPin" />
+                <Pin Id="UKIUD53HzK4PurWOEwx6hg" Name="Body" Kind="OutputPin" />
+              </Node>
+              <Node Bounds="176,426,63,19" Id="HE3a7Vli5xnQOq5v9i6pgV">
+                <p:NodeReference LastCategoryFullName="Primitive.String" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="OperationCallFlag" Name="FromBytes" />
+                  <CategoryReference Kind="StringType" Name="String" NeedsToBeDirectParent="true" />
+                </p:NodeReference>
+                <Pin Id="Ak7nqc1nqpVLynPTJ3qA21" Name="Input" Kind="StateInputPin" />
+                <Pin Id="EuEpgpS6Ou8LwoGAgr8iHz" Name="Encoding" Kind="InputPin" />
+                <Pin Id="JiLk4CScc9VO8goDjIOj0F" Name="Result" Kind="OutputPin" />
+              </Node>
+              <Node Bounds="176,471,63,26" Id="TS9QFl8mTgSO9suwYEjRsA">
+                <p:NodeReference LastCategoryFullName="System.XML" LastSymbolSource="VL.Xml.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="OperationCallFlag" Name="ParseJSON" />
+                </p:NodeReference>
+                <Pin Id="T3mgiQiOBIrNH4EVuDMuVm" Name="Input" Kind="InputPin" />
+                <Pin Id="UGNm2uxf2XBNOOKG76feGw" Name="Deserialize Root Element Name" Kind="InputPin" DefaultValue="response" />
+                <Pin Id="QZSo712KinlLcZlrwKYJ5i" Name="Write Array Attribute" Kind="InputPin" DefaultValue="True" />
+                <Pin Id="V4u6YjvMMYXO4te2R5qkQA" Name="Result" Kind="OutputPin" />
+              </Node>
+            </Patch>
+          </Node>
+          <Node Bounds="110,567,65,19" Id="BD3BA5joHDoMSFD836wHK6">
+            <p:NodeReference LastCategoryFullName="Reactive" LastSymbolSource="VL.Reactive.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="HoldLatest" />
+            </p:NodeReference>
+            <Pin Id="CGhMHK0sT4EPAG8hZgfenM" Name="Async Notifications" Kind="InputPin" />
+            <Pin Id="Sac1BJpEYDbNbPNGHN8CJg" Name="Reset" Kind="InputPin" />
+            <Pin Id="MErFPCdimDvLYJ3uruX0kO" Name="Value" Kind="OutputPin" />
+            <Pin Id="O0hbT8vOV8mLWsARNnML7N" Name="On Data" Kind="OutputPin" />
+          </Node>
+          <Pad Id="Ow6Wl3kFwEYPuomsnvZLp3" Comment="" Bounds="112,621,94,66" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="JLJc2SDWwLaP1RFlDHyHej" Bounds="110,134,446,19" ShowValueBox="true" isIOBox="true" Value="Say you have a large response from a REST call that you want to visualize..">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="MRxvjKWLPtgQVtnwKFSjaP" Bounds="323,252,35,27" ShowValueBox="true" isIOBox="true" Value="1.">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">13</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="E68wftVQe9gM4vWlaBIk2b" Bounds="364,256,185,19" ShowValueBox="true" isIOBox="true" Value="Run the query">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="VbNoNnGCXVoNv0O0hCX6mI" Bounds="323,296,35,27" ShowValueBox="true" isIOBox="true" Value="2.">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">13</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="Pfgmwf5VOc9PTa0maPmCRE" Bounds="364,300,253,30" ShowValueBox="true" isIOBox="true" Value="Press CTRL+T to bring up the Text Editor">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="DjSs1FW5MghPFH3FAVzfV8" Bounds="323,343,35,27" ShowValueBox="true" isIOBox="true" Value="3.">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">13</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="HCiIhbTXITxNyF5DjUGYkZ" Bounds="364,347,263,65" ShowValueBox="true" isIOBox="true" Value="Select the XElement IOBox that holds the result : it should be displayed in the Text Editor with syntax highlight">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="L6UDUJXxeGNQS0mofFWkgg" Comment="" Bounds="192,281,35,21" ShowValueBox="true" isIOBox="true" Value="False">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="Boolean" />
+              <FullNameCategoryReference ID="Primitive" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="QVxxE5MsvsiMkzKv6JS2QC" Bounds="141,279,35,27" ShowValueBox="true" isIOBox="true" Value="1.">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">13</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="PrdioaMhGbyPR4u7mU92A3" Bounds="68,652,35,27" ShowValueBox="true" isIOBox="true" Value="3.">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">13</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="PoHhS2bwNKyPhXsxoEpmfH" Bounds="373,156,173,11" ShowValueBox="true" isIOBox="true" Value="and you are too lazy to copy and paste to Sublime">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">5</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="DQV2BdcFWbxM5xNzGUsruO" Bounds="364,433,341,172" ShowValueBox="true" isIOBox="true" Value="Known issues :&#xD;&#xA;&#xD;&#xA;- No JSON syntax highlight&#xD;&#xA;- No folding&#xD;&#xA;- No prettyfier&#xD;&#xA;- No darkmode&#xD;&#xA;- Selecting an IOBox sometimes shows System.Object&#xD;&#xA;- Copy as IOBox works only once, so consider it's not there ATM">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="KTnSCov7N7wLOSUBIVqX78" Bounds="323,639,436,61" ShowValueBox="true" isIOBox="true" Value="If you want to do that in your own document, you have to reference VL.TextEditor.HDE. Then you'll be able to press CTRL+T to show the Text Editor.">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+        </Canvas>
         <Patch Id="OaTBwdfbHdnLyNgfPRvnFQ" Name="Create" />
         <Patch Id="A7hKT7MZ2ATPvFZBHfX2Jw" Name="Update" />
         <ProcessDefinition Id="I3iDVZZl9yzMlxZPr8QgHr">
           <Fragment Id="S9f8IqTvYacMkxkTXo3ZXZ" Patch="OaTBwdfbHdnLyNgfPRvnFQ" Enabled="true" />
           <Fragment Id="KgEbChmobHwLvBJkfsNI1S" Patch="A7hKT7MZ2ATPvFZBHfX2Jw" Enabled="true" />
         </ProcessDefinition>
+        <Link Id="MBoYWGjj4z1QTluoMykio5" Ids="Tbbn9uWpJdFL86vpLkHzJ0,GUjpwRKpJvCLcMTCfCdcOL" />
+        <Link Id="OzYBda7ZtRIOYidq03RRdc" Ids="BlM2n2JpR0cLECi5U5qPJx,R5x0V2kwUC7L4mDcNZbgWc" IsHidden="true" />
+        <Link Id="LKutMvvmxlyPuW3DX9fyVK" Ids="JSPRjoqL1L7O1UpDYAWCrw,ScghjuQVjkkMcWk8tD4f3k" IsHidden="true" />
+        <Link Id="Mxbb2rlOwlRNtm9ZB0aYgG" Ids="LC7VETVfytpPnGPtIKORB9,Nc4Fst8SoOsNYjaooE36za" />
+        <Link Id="Kq7SN21su6ZPQUCAKzF7Qr" Ids="R5x0V2kwUC7L4mDcNZbgWc,SGPSSpgDI5XM6srs3SkYbj" />
+        <Link Id="GntGQzuMXPnLvxiNv1JcKj" Ids="UKIUD53HzK4PurWOEwx6hg,Ak7nqc1nqpVLynPTJ3qA21" />
+        <Link Id="OiBe9KbZ3CINYejYdcDwtb" Ids="GaTZEsmDY0FLm58fo1W3NX,CGhMHK0sT4EPAG8hZgfenM" />
+        <Link Id="CeTK4XRUJbLM5ylC9b2Cl3" Ids="MErFPCdimDvLYJ3uruX0kO,Ow6Wl3kFwEYPuomsnvZLp3" />
+        <Link Id="S6skEIE5LfeQLGAtFLx7UW" Ids="JiLk4CScc9VO8goDjIOj0F,T3mgiQiOBIrNH4EVuDMuVm" />
+        <Link Id="Diz6ZlVYEAMOqvpzV1MHPp" Ids="V4u6YjvMMYXO4te2R5qkQA,JSPRjoqL1L7O1UpDYAWCrw" />
+        <Link Id="FC8EC9QPyhaLFIw2atlkAn" Ids="L6UDUJXxeGNQS0mofFWkgg,OLQTqmRbwMlP8phFdpVvBf" />
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="Ohgsaf0uyEZOJPxyTaH7uS" Location="VL.CoreLib" Version="2021.4.0-0506-g16b8b9f878" />
+  <NugetDependency Id="Ohgsaf0uyEZOJPxyTaH7uS" Location="VL.CoreLib" Version="2021.4.0-0526-gd606d93626" />
+  <NugetDependency Id="Ksq7L9QZls4MpgNTcK1TgD" Location="VL.TextEditor.HDE" Version="0.0.0.0" />
 </Document>
