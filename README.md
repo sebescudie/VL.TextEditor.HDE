@@ -8,3 +8,7 @@ A small Editor Plugin for vvvv gamma that allows to visualize the content of an 
 - Build the solution in `Release` mode
 - Start vvvv with `--package-repositories`
 - Look for the help patch in the help browser
+
+## Credits
+
+- Thanks to Elias and Dottore
